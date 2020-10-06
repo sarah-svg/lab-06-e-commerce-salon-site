@@ -1,0 +1,29 @@
+
+html{
+    background-color: rgb(61, 197, 179);
+    border: solid 8px whitesmoke;
+    color: rgb(9, 80, 73);
+    font-family: 'Sansita Swashed', cursive;
+    align-content: center;
+}
+
+.item > img {
+    width: 150px;
+    border: solid 10px turquoise;
+    
+
+}
+
+.item > p {
+    margin: 3;
+    border: solid 5px rgb(61, 197, 179);
+    background-color: darkslategray;
+    color: floralwhite;
+}
+
+.on-sale {
+    background-color: darkcyan;
+    color: darkgray;
+    justify-content: center;
+}
+
