@@ -2,6 +2,8 @@
 // IMPORT MODULES under test here:
 import { renderHair } from '../utils.js';
 
+import { renderTableRow } from '../cart/cart-utils.js';
+
 const test = QUnit.test;
 
 test('should take in a hair care product and return an li with the appropriate contents', (expect) => {
@@ -21,4 +23,20 @@ test('should take in a hair care product and return an li with the appropriate c
     const actual = renderHair(item);
     expect.equal(actual.outerHTML, expected);
 
+});
+///{ 
+    //id: 'Joico',
+   // quantity: 5,
+///},
+
+test('should take in a cartItem and return a tr element with the apporiate contents', (expect) => {
+    const cartItem = {
+        id: 'Joico',
+        quantity: '5',
+    };
+    const expected = '<tr><td>Daily Care</td><td>$3</td><td>5</td><td>$15</td></tr>';
+    const actual = renderTableRow(cartItem);
+
+    expect.equal(actual.outerHTML, expected);
+  
 });

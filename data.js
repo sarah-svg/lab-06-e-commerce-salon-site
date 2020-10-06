@@ -18,7 +18,7 @@ export const items = [
     {
         id: 'Pravana',
         title: 'Perfect Blonde',
-        author: 'Pravana Hair Cair',
+        author: 'Pravana Hair Care',
         cover: 'pravana.png',
         price: 2,
         onSale: false,
@@ -39,4 +39,30 @@ export const items = [
         price: 2,
         onSale: false,
     },
+];
+
+
+
+export const cart = [
+    { 
+        id: 'Joico',
+        quantity: 5,
+    },
+    { 
+        id: 'Matrix',
+        quantity: 5,
+    },
+    { 
+        id: 'Pravana',
+        quantity: 5,
+    },
+    { 
+        id: 'Chi',
+        quantity: 5,
+    },
+    { 
+        id: 'Tigi',
+        quantity: 5,
+    },
+
 ];

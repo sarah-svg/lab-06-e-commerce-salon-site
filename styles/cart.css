@@ -1,0 +1,26 @@
+table {
+    width: 50%;
+
+}
+
+td, th {
+    border: solid 2px
+}
+
+th {
+    background-color: aquamarine;
+}
+
+tr:nth-child(odd) {
+    background: pink;
+}
+
+.total {
+    text-align: right;
+    padding: 5px;
+}
+
+.unstyle {
+    background-color: white;
+    border: none
+}

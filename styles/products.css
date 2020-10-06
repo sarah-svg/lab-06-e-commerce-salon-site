@@ -1,0 +1,35 @@
+.items {
+    display: flex;
+    flex-direction: column;
+    columns: 1rem 1rem 1rem 1rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    padding: 10px;
+    border:  violet solid 7px;
+    text-align: center;
+    border-radius: 2px;
+    margin: 3px;
+}
+
+.item > img {
+    width: 100px;
+    border: violet solid 7px;
+
+}
+
+.item > p {
+    margin: 0;
+    border: violet solid 7px;
+    font: 1.5em sans-serif;
+    background-color: thistle;
+}
+
+.on-sale {
+    background-color: rgb(133, 34, 133);
+}
+
+ul {
+    display: flex;
+    background-color: rgb(133, 34, 133);
+}
