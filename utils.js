@@ -1,6 +1,6 @@
 
 
-export function renderHair(care) {
+export function renderHair(item) {
     const li = document.createElement('li');
     const title = document.createElement('p');
     const author = document.createElement('p');
@@ -8,29 +8,29 @@ export function renderHair(care) {
     const price = document.createElement('p');
     const button = document.createElement('button');
 
-    li.classList.add('hair');
+    li.classList.add('item');
 
-    if (care.onSale) {
+    if (item.onSale) {
         li.classList.add('on-sale');
     }
 
     title.classList.add('title');
-    title.textContent = care.title;
+    title.textContent = item.title;
 
     li.appendChild(title);
 
     author.classList.add('author');
-    author.textContent = care.author;
+    author.textContent = item.author;
 
     li.appendChild(author);
     cover.classList.add('cover');
 
-    cover.src = `../assets/${care.cover}`;
+    cover.src = `../assets/${item.cover}`;
 
     li.appendChild(cover);
 
     price.classList.add('price');
-    price.textContent = `$${care.price.toFixed(2)}`;
+    price.textContent = `$${item.price.toFixed(2)}`;
 
     li.appendChild(price);
 
