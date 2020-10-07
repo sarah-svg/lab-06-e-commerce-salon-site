@@ -19,9 +19,7 @@ export function renderTableRow(cartItem) {
 
     // we need the name and the price of the book
     // the name and price of the book live in the sourceOfTruth
-    // we should use our findById function to get the airplane data from the source of truth
-
-    // findById is going to return { a book object } that we'll call bookData
+ 
     const itemData = findById(
         // findById takes an array
         sourceOfTruth, 
@@ -29,7 +27,7 @@ export function renderTableRow(cartItem) {
         cartItem.id
     );
 
-    /* bookData is an object that has: .title, .id, .price, .author */
+  
     const price = itemData.price;
     const title = itemData.title;
 

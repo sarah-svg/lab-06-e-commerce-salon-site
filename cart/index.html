@@ -16,9 +16,11 @@
     <header>
     </header>
     <main>
+        <a href="/"></a>
+        <a href="/"><img src="../assets/logo.png"/></a>
         <section class="main-section">
             hello and welcome to the cart page!
-            <a href="home"> Homepage</a>
+            <a href="index.html">Back</a>
             <table>
                 <thead>
                     <tr>
@@ -33,19 +35,25 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td class="unstyle" colspan="2"></td>
-                        <td class="total unstyle" colspan="2">To</td>
+                     
+                        <td class="unstyle" colspan="1"></td>
+                       <td class="total unstyle" colspan="1"></td>
+                       <td colspan="2">Total: <span id="total"></span>$</td>
                     </tr>
                 </tfoot>
               </table>
-              <button id = 'checkout'>checkout<span id = 'total'></span></button>
+              
+              <button id = 'checkout'>checkout<span id= 'span'></span></button>
         </section>
     </main>
     <footer>
-        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+  
+        <div class="copy gutter-right">&copy; Sarahs Code</div>
     </footer>
     <script type="module" src="./cart-utils.js"></script>
     <script type="module" src="./cart.js"></script>
+    <script type="module" src="./data-cart.js"></script>
+  
 </body>
 
 </html>

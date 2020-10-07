@@ -6,7 +6,6 @@
     align-items: center;
     width: 100px;
     padding: 10px;
-    border:  violet solid 7px;
     text-align: center;
     border-radius: 2px;
     margin: 3px;
@@ -14,22 +13,18 @@
 
 .item > img {
     width: 100px;
-    border: violet solid 7px;
+    border: rgb(70, 190, 150) solid 7px;
 
 }
 
 .item > p {
     margin: 0;
-    border: violet solid 7px;
+    border: solid 7px rgb(70, 190, 150) ;
     font: 1.5em sans-serif;
-    background-color: thistle;
-}
-
-.on-sale {
-    background-color: rgb(133, 34, 133);
+    background-color: white;
 }
 
 ul {
     display: flex;
-    background-color: rgb(133, 34, 133);
+    background-color:rgb(175, 38, 61);
 }
