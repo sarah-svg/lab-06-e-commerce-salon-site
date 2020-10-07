@@ -1,0 +1,28 @@
+table {
+    width: 70%;
+    border: solid 5px black;
+
+
+}
+
+td, th {
+    border: solid 4px
+}
+
+th {
+    background-color: rgb(70, 190, 150);
+}
+
+tr:nth-child(even) {
+    background: rgb(175, 38, 61);
+}
+
+.total {
+    text-align: right;
+    padding: 5px;
+}
+
+.unstyle {
+    background-color: white;
+    border: none
+}
