@@ -1,6 +1,6 @@
 
 //////////THIS ONE
-
+import { items as hardCodedHair } from '../data.js';
 
 export function calculateItem(quantity, price) {
     let linetotal = quantity * price;
@@ -8,7 +8,7 @@ export function calculateItem(quantity, price) {
 } 
 ////////////////////
 export const CART = 'CART';
-
+export const PRODUCTS = 'PRODUCTS';
 
 //////////////////////////////////////
 export function findById(someArray, someId) {
@@ -20,7 +20,22 @@ export function findById(someArray, someId) {
         }
     }
 }
+//////////////
+export function getLocalStorageItems() {
+    let localStorageBooks = JSON.parse(localStorage.getItem(PRODUCTS));
 
+  
+    if (!localStorageBooks) {
+        
+        const stringyBooks = JSON.stringify(hardCodedHair);
+
+        localStorage.setItem(PRODUCTS, stringyBooks);
+        localStorageBooks = hardCodedHair;
+    }
+
+    return localStorageBooks;
+}
+/////////////
 export function renderHair(item) {
     const li = document.createElement('li');
     const title = document.createElement('p');
@@ -28,7 +43,6 @@ export function renderHair(item) {
     const cover = document.createElement('img');
     const price = document.createElement('p');
     const button = document.createElement('button');
-//////////
     const removeButton = document.createElement('button');
 /////////////////////////////
     li.classList.add('item');
@@ -123,4 +137,3 @@ export function setInLocalStorage(key, value) {
 
     return value;
 }
-/////////////////////////////////////////
