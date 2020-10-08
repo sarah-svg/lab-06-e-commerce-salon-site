@@ -43,26 +43,27 @@ export const items = [
 
 
 
-export const cart = [
-    { 
-        id: 'Joico',
-        quantity: 5,
-    },
-    { 
-        id: 'Matrix',
-        quantity: 5,
-    },
-    { 
-        id: 'Pravana',
-        quantity: 5,
-    },
-    { 
-        id: 'Chi',
-        quantity: 5,
-    },
-    { 
-        id: 'Tigi',
-        quantity: 5,
-    },
+///export const cart = [
+   // { 
+    //    id: 'Joico',
+   //     quantity: 5,
+   // },
+   // { 
+   //     id: 'Matrix',
+   //     quantity: 5,
+  //  },
+   // { 
+      //  id: 'Pravana',
+      //  quantity: 5,
+ ///   },
+   // { 
+   //     id: 'Chi',
+    //    quantity: 5,
+   // },
+   // { 
+     //   id: 'Tigi',
+       // quantity: 5,
+   // },
 
-];
+////];
+

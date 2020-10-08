@@ -3,7 +3,8 @@
 import { renderHair } from '../utils.js';
 
 import { renderTableRow } from '../cart/cart-utils.js';
-//import { calculateItem } from '../cart/data-cart.js';
+///import { calculateTotal } from '../cart/data-cart.js';
+import { calculateItem } from '../cart/cart-utils.js';
 const test = QUnit.test;
 
 test('should take in a hair care product and return an li with the appropriate contents', (expect) => {
@@ -40,15 +41,14 @@ test('should take in a cartItem and return a tr element with the apporiate conte
     expect.equal(actual.outerHTML, expected);
   
 });
-
-//test('should take in a cartItem and returns the total price for a single item', (assert) => {
-  //  const cartItemQuantity = 5;
-   // const cartItemPrice = 3;
+test('should take in a cartItem and returns the total price for a single item', (assert) => {
+    const cartItemQuantity = 5;
+    const cartItemPrice = 3;
         
         
-   // const expected = '<td>$15</td>';
-    //const actual = calculateItem(cartItemQuantity, cartItemPrice);
+    const expected = '15';
+    const actual = calculateItem(cartItemQuantity, cartItemPrice);
 
-   // assert.equal(actual, expected);
+    assert.equal(actual, expected);
   
-//});
+});

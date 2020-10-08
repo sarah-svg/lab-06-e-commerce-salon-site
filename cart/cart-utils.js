@@ -1,12 +1,6 @@
 import { items as sourceOfTruth } from '../data.js';
 import { findById } from '../utils.js';
 
-/*
-    const cartItem = {
-        id: 'airplanes',
-        quantity: 2
-    };
-*/
 
 export function renderTableRow(cartItem) {
     const tr = document.createElement('tr');
@@ -17,13 +11,11 @@ export function renderTableRow(cartItem) {
 
     tdQuantity.textContent = cartItem.quantity;
 
-    // we need the name and the price of the book
-    // the name and price of the book live in the sourceOfTruth
  
     const itemData = findById(
-        // findById takes an array
+ 
         sourceOfTruth, 
-        // and an id to match against
+    
         cartItem.id
     );
 

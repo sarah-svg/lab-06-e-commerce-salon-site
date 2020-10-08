@@ -1,40 +1,53 @@
-//import { items, cart } from '../data.js';
-import { cart } from '../data.js';
+
+import { items } from '../data.js';
 import { renderTableRow } from './cart-utils.js';
-//import { findById } from '../utils.js';
-//import { calculateTotal } from '../data:cart.js';
+import { findById, getFromLocalStorage, CART } from '../utils.js';
+
+
 const table = document.querySelector('tbody');
+const orderButton = document.querySelector('button');
 
+const cart = getFromLocalStorage(CART) || [];  
 for (let i = 0; i < cart.length; i++) {
-    const items = cart[i];
+    const item = cart[i];
+    
+    if (item.quantity >= 0) {
+        const tr = renderTableRow(item);
+        table.appendChild(tr);    
+    }
+}
+const total = calculateTotal(cart);
 
-    const tr = renderTableRow(items);
+const totalCell = document.querySelector('.total');
 
-    table.appendChild(tr);    
+totalCell.textContent = `Total: $${total}`;
+
+
+
+//////////////////
+export function calculateTotal(cartArray) {
+    let accumulator = 0;
+    for (let i = 0; i < cartArray.length; i++) {
+        const item = cartArray[i];
+        const trueItem = findById(items, item.id);
+        let subtotal = calculateItem(item.quantity, trueItem.price);
+        subtotal = Math.round(subtotal * 100) / 100;
+        accumulator = accumulator + subtotal;
+    }
+
+    return accumulator;
 }
 
-//const total = calculateTotal(cart);
+////////////////////
 
-//const totalCell = document.querySelector('.total');
+export function calculateItem(quantity, price) {
+    let linetotal = quantity * price;
+    return linetotal;
+} 
 
-//totalCell.textContent = `Total: $${total}`;
-
-//function calculateTotal(cartArray) {
-   // // initialize an accumulator to 0
-    //let accumulator = 0;
-
-    //for every item in the cart
-   // for (let i = 0; i < cartArray.length; i++) {
-       // const item = cartArray[i];
-      //  // go get the item's true data
-      //  const trueItem = findById(items, item.id);
-
-        // use the true data's price with the cart's quantity to get the subtotal for this item
-        //const subtotal = trueItem.price * item.quantity;
-//
-    ///   // add that subtotal to the accumulator
-       // accumulator = accumulator + subtotal;
-  //  }
-
-  //  return accumulator;
-///}
+orderButton.addEventListener('click', () => {
+    const stringyCart = JSON.stringify(cart, true, 2);
+    alert(stringyCart);
+    localStorage.clear();
+    window.location.href = '/';
+});
