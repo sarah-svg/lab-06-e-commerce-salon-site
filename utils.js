@@ -1,3 +1,16 @@
+
+//////////THIS ONE
+
+
+export function calculateItem(quantity, price) {
+    let linetotal = quantity * price;
+    return linetotal;
+} 
+////////////////////
+export const CART = 'CART';
+
+
+//////////////////////////////////////
 export function findById(someArray, someId) {
     for (let i = 0; i < someArray.length; i++) {
         const item = someArray[i];
@@ -15,7 +28,9 @@ export function renderHair(item) {
     const cover = document.createElement('img');
     const price = document.createElement('p');
     const button = document.createElement('button');
-
+//////////
+    const removeButton = document.createElement('button');
+/////////////////////////////
     li.classList.add('item');
 
     if (item.onSale) {
@@ -44,7 +59,68 @@ export function renderHair(item) {
 
     button.textContent = 'Add to cart';
 
+    button.addEventListener('click', () => {
+   
+        const cart = getFromLocalStorage(CART) || [];
+
+   
+        const itemInCart = findById(cart, item.id);
+
+   
+        if (itemInCart === undefined) {
+      
+       
+            const newCartItem = {
+                id: item.id,
+                quantity: 1, 
+            };
+
+            cart.push(newCartItem);
+        } else {
+       
+            itemInCart.quantity++;
+        }
+
+        setInLocalStorage(CART, cart);
+    });
+
+    removeButton.textContent = 'remove one';
+
+    removeButton.addEventListener('click', () => {
+  
+        const cart = getFromLocalStorage(CART) || [];
+
+    
+        const itemInCart = findById(cart, item.id);
+
+        if (itemInCart) {
+      
+            if (itemInCart.quantity !== 0) {
+                itemInCart.quantity--;
+            }
+        }
+
+        setInLocalStorage(CART, cart);
+    });
+
     li.appendChild(button);
+    li.appendChild(removeButton);
 
     return li;
 }
+/////////////////////////////////////////////
+export function getFromLocalStorage(key) {
+    const item = localStorage.getItem(key);
+
+    return JSON.parse(item);
+}
+
+
+export function setInLocalStorage(key, value) {
+    const stringyItem = JSON.stringify(value);
+
+    localStorage.setItem(key, stringyItem);
+
+    return value;
+}
+/////////////////////////////////////////
