@@ -3,8 +3,8 @@
 import { renderHair } from '../utils.js';
 
 import { renderTableRow } from '../cart/cart-utils.js';
-///import { calculateTotal } from '../cart/data-cart.js';
-import { calculateItem } from '../cart/cart-utils.js';
+//import { calculateTotal } from '../cart/cart.js';
+import { calculateItem } from '../cart/cart.js';
 const test = QUnit.test;
 
 test('should take in a hair care product and return an li with the appropriate contents', (expect) => {
@@ -19,8 +19,8 @@ test('should take in a hair care product and return an li with the appropriate c
 
 
 
-    const expected = '<li class="item on-sale"><p class="title">Daily Care</p><p class="author">Joico Hair</p><img class="cover" src="../assets/joico.png"><p class="price">$3.00</p><button>Add to cart</button></li>';
-
+   
+    const expected = '<li class=\"item on-sale\"><p class=\"title\">Daily Care</p><p class=\"author\">Joico Hair</p><img class=\"cover\" src=\"../assets/joico.png\"><p class=\"price\">$3.00</p><button>Add to cart</button><button>remove one</button></li>';
     const actual = renderHair(item);
     expect.equal(actual.outerHTML, expected);
 
@@ -41,14 +41,15 @@ test('should take in a cartItem and return a tr element with the apporiate conte
     expect.equal(actual.outerHTML, expected);
   
 });
-test('should take in a cartItem and returns the total price for a single item', (assert) => {
+////////////
+test('should take in a cartItem and returns the total price for a single item', (expect) => {
     const cartItemQuantity = 5;
     const cartItemPrice = 3;
         
         
-    const expected = '15';
+    const expected = 15;
     const actual = calculateItem(cartItemQuantity, cartItemPrice);
 
-    assert.equal(actual, expected);
+    expect.equal(actual, expected);
   
 });
