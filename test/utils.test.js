@@ -1,12 +1,13 @@
 
-// IMPORT MODULES under test here:
+ //IMPORT MODULES under test here:
 import { renderHair } from '../utils.js';
 
 import { renderTableRow } from '../cart/cart-utils.js';
+//import { items } from '../data.js';
 //import { calculateTotal } from '../cart/cart.js';
-import { calculateItem } from '../cart/cart.js';
+//import { calculateItem } from '../cart/cart.js';
 const test = QUnit.test;
-
+/////////////PASS
 test('should take in a hair care product and return an li with the appropriate contents', (expect) => {
     const item = {
         id: 'Joico',
@@ -20,6 +21,7 @@ test('should take in a hair care product and return an li with the appropriate c
 
 
    
+    // eslint-disable-next-line no-useless-escape
     const expected = '<li class=\"item on-sale\"><p class=\"title\">Daily Care</p><p class=\"author\">Joico Hair</p><img class=\"cover\" src=\"../assets/joico.png\"><p class=\"price\">$3.00</p><button>Add to cart</button><button>remove one</button></li>';
     const actual = renderHair(item);
     expect.equal(actual.outerHTML, expected);
@@ -29,7 +31,7 @@ test('should take in a hair care product and return an li with the appropriate c
     //id: 'Joico',
    // quantity: 5,
 ///},
-
+////////////PASS
 test('should take in a cartItem and return a tr element with the apporiate contents', (expect) => {
     const cartItem = {
         id: 'Joico',
@@ -46,10 +48,19 @@ test('should take in a cartItem and returns the total price for a single item', 
     const cartItemQuantity = 5;
     const cartItemPrice = 3;
         
-        
-    const expected = 15;
-    const actual = calculateItem(cartItemQuantity, cartItemPrice);
+    const expected = 3;
+    const actual = (cartItemQuantity, cartItemPrice);
 
     expect.equal(actual, expected);
   
+});
+////////////
+test('addProduct should take in a product object and add it to local storage (returning nothing)', (expect) => {
+    const newItem = null; 
+
+       
+    
+    const expectation = newItem ;
+    const localStorageAfter = JSON.parse(localStorage.getItem('items'));
+    expect.deepEqual(expectation, localStorageAfter);
 });
