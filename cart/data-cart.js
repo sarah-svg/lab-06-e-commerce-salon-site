@@ -1,5 +1,5 @@
-import { items, cart } from '../data.js';
-import { findById } from '../utils.js';
+//import { items, cart } from '../data.js';
+//import { findById } from '../utils.js';xs
 
 //const total = calculateTotal(cart);
 

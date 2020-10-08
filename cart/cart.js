@@ -22,8 +22,6 @@ const totalCell = document.querySelector('.total');
 
 totalCell.textContent = `Total: $${total}`;
 
-
-
 //////////////////
 export function calculateTotal(cartArray) {
     let accumulator = 0;
