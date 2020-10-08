@@ -26,7 +26,7 @@ form.addEventListener('submit', (e) => {
     const localStorageItems = getLocalStorageItems();
     localStorageItems.push(newItem);
 
-    const stringyLocalBooks = JSON.stringify(localStorageItems);
-    localStorage.setItem(PRODUCTS, stringyLocalBooks);
+    const stringyLocalItems = JSON.stringify(localStorageItems);
+    localStorage.setItem(PRODUCTS, stringyLocalItems);
 
 });
