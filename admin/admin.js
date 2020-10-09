@@ -26,11 +26,11 @@ form.addEventListener('submit', (e) => {
         price: Number(price),
     };
 
-    let test = addNewItem(newItem);
+    addNewItem(newItem);
     
 });
 
-function addNewItem(newItem) {
+export function addNewItem(newItem) {
   ///items.push(newItem);
     const localStorageItems = getLocalStorageItems();
  
@@ -39,7 +39,6 @@ function addNewItem(newItem) {
     const stringyLocalItems = JSON.stringify(localStorageItems);
  //alert('stringyLocalItems' + stringyLocalItems);
     localStorage.setItem(PRODUCTS, stringyLocalItems);
-    return stringyLocalItems;
     
 }
 

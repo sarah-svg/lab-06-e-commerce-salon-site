@@ -3,9 +3,11 @@
 import { renderHair } from '../utils.js';
 
 import { renderTableRow } from '../cart/cart-utils.js';
+import { addNewItem } from '../admin/admin.js';
 //import { items } from '../data.js';
 //import { calculateTotal } from '../cart/cart.js';
 //import { calculateItem } from '../cart/cart.js';
+//import { addNewItem } from '../admin.js';
 const test = QUnit.test;
 /////////////PASS
 test('should take in a hair care product and return an li with the appropriate contents', (expect) => {
@@ -56,7 +58,10 @@ test('should take in a cartItem and returns the total price for a single item', 
 });
 //////////// PASS
 test('addProduct should take in a product object and add it to local storage (returning nothing)', (expect) => {
-    const newItem = null; 
+    const newItem = {
+        title: 'deep clean',
+        price:
+    }; 
 
        
     
@@ -65,8 +70,62 @@ test('addProduct should take in a product object and add it to local storage (re
     expect.deepEqual(expectation, localStorageAfter);
 });
 //////////////////////////
-test('take in a new item and add to the product list'), (expect) => {
-   
-    
+/*test('addProduct should take in a product object and add it to local storage (returning nothing)', (expect) => {
+    const newItem = {
+        title: 'Deep Clean',
+        price: 5 
+    };
+    const expectation = [
+        { 
+            id: 'Joico',
+            title: 'Daily Care',
+            author: 'Joico Hair',
+            cover: 'joico.png',
+            price: 3,
+            onSale: true,
+        },
+        {
+            id: 'Matrix',
+            title: 'Matrix Biolage Color',
+            author: 'Biolage',
+            cover: 'matrix.png',
+            price: 4,
+            onSale: true,
+        },
+        {
+            id: 'Pravana',
+            title: 'Perfect Blonde',
+            author: 'Pravana Hair Care',
+            cover: 'pravana.png',
+            price: 2,
+            onSale: false,
+        },
+        {
+            id: 'Chi',
+            title: 'Silk Infusion Reconstructing Complex',
+            author: 'faruq',
+            cover: 'chi.png',
+            price: 4,
+            onSale: true,
+        },
+        {
+            id: 'Tigi',
+            title: 'Rehab For Hair',
+            author: 'Bead Head Hair',
+            cover: 'tigi.png',
+            price: 2,
+            onSale: false,
+        },
+        {
+            title: 'Deep Clean',
+            price: 5,
+        },
+    ];
 
-}
+
+    addNewItem(newItem);
+
+    const localStorageAfter = JSON.parse(localStorage.getItem('items'));
+  
+    expect.deepEqual(expectation, localStorageAfter);
+});*/
