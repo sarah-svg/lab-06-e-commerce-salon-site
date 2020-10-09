@@ -1,5 +1,7 @@
 const form = document.querySelector('form');
+import { items } from '../data.js';
 import { getLocalStorageItems, PRODUCTS } from '../utils.js';
+
 ///////////////
 /////////////////
 
@@ -23,10 +25,15 @@ form.addEventListener('submit', (e) => {
         cover: cover,
         price: Number(price),
     };
+    ///items.push(newItem);
     const localStorageItems = getLocalStorageItems();
+ 
     localStorageItems.push(newItem);
-
+  
     const stringyLocalItems = JSON.stringify(localStorageItems);
+   //alert('stringyLocalItems' + stringyLocalItems);
     localStorage.setItem(PRODUCTS, stringyLocalItems);
+   
+    
 
 });

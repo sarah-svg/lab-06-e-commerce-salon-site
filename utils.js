@@ -22,18 +22,18 @@ export function findById(someArray, someId) {
 }
 //////////////
 export function getLocalStorageItems() {
-    let localStorageBooks = JSON.parse(localStorage.getItem(PRODUCTS));
+    let localStorageItems = JSON.parse(localStorage.getItem(PRODUCTS));
 
   
-    if (!localStorageBooks) {
+    if (!localStorageItems) {
         
-        const stringyBooks = JSON.stringify(hardCodedHair);
+        const stringyItems = JSON.stringify(hardCodedHair);
 
-        localStorage.setItem(PRODUCTS, stringyBooks);
-        localStorageBooks = hardCodedHair;
+        localStorage.setItem(PRODUCTS, stringyItems);
+        localStorageItems = hardCodedHair;
     }
 
-    return localStorageBooks;
+    return localStorageItems;
 }
 /////////////
 export function renderHair(item) {

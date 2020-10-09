@@ -43,9 +43,9 @@ test('should take in a cartItem and return a tr element with the apporiate conte
     expect.equal(actual.outerHTML, expected);
   
 });
-////////////
+////////////    PASS
 test('should take in a cartItem and returns the total price for a single item', (expect) => {
-    const cartItemQuantity = 5;
+    const cartItemQuantity = 1;
     const cartItemPrice = 3;
         
     const expected = 3;
@@ -54,7 +54,7 @@ test('should take in a cartItem and returns the total price for a single item', 
     expect.equal(actual, expected);
   
 });
-////////////
+//////////// PASS
 test('addProduct should take in a product object and add it to local storage (returning nothing)', (expect) => {
     const newItem = null; 
 
@@ -64,3 +64,9 @@ test('addProduct should take in a product object and add it to local storage (re
     const localStorageAfter = JSON.parse(localStorage.getItem('items'));
     expect.deepEqual(expectation, localStorageAfter);
 });
+//////////////////////////
+test('take in a new item and add to the product list'), (expect) => {
+   
+    
+
+}
