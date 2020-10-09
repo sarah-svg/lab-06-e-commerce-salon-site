@@ -25,15 +25,23 @@ form.addEventListener('submit', (e) => {
         cover: cover,
         price: Number(price),
     };
-    ///items.push(newItem);
+
+    addNewItem(newItem);
+    
+});
+
+export function addNewItem(newItem) {
+  ///items.push(newItem);
     const localStorageItems = getLocalStorageItems();
  
     localStorageItems.push(newItem);
-  
-    const stringyLocalItems = JSON.stringify(localStorageItems);
-   //alert('stringyLocalItems' + stringyLocalItems);
-    localStorage.setItem(PRODUCTS, stringyLocalItems);
-   
-    
 
-});
+    const stringyLocalItems = JSON.stringify(localStorageItems);
+ //alert('stringyLocalItems' + stringyLocalItems);
+    localStorage.setItem(PRODUCTS, stringyLocalItems);
+    
+}
+
+
+
+
