@@ -1,1 +1,16 @@
 /* add home page styles here */
+
+body{
+    background-image: url(https://i.ebayimg.com/images/g/CWQAAOSw-Tlde4Rd/s-l300.png);
+}
+h1{
+    background-color: rgb(200, 85, 235);
+    color: white;
+}
+.pic{
+    background-color: rgb(172, 240, 134);
+}
+.gutter-right{
+color: black;
+font-size: 2em;
+}
