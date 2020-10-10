@@ -1,0 +1,16 @@
+ h1{
+     color: black;
+     font: 3em;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+ }
+ 
+ 
+ section{
+    font: 1.em sans-serif;
+    color: rgb(200, 104, 230);
+
+}
+label{
+    display: flexbox;
+    flex-direction: column;
+}

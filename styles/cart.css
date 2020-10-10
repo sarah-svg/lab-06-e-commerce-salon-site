@@ -1,3 +1,15 @@
+html{
+    font-size: 3em;
+    background-image: url(https://i.ebayimg.com/images/g/CWQAAOSw-Tlde4Rd/s-l300.png);
+   color: white;
+}
+header{
+    text-shadow: #FFF 0 -1px 4px,  rgb(200, 85, 235)0 -2px 10px,  rgb(200, 85, 235) 0 -10px 20px, red 0 -18px 40px;
+}
+section{
+    text-shadow: #FFF 0 -1px 4px,  rgb(200, 85, 235)0 -2px 10px,  rgb(200, 85, 235) 0 -10px 20px, red 0 -18px 40px;
+}
+
 table {
     width: 70%;
     border: solid 5px black;
@@ -6,15 +18,16 @@ table {
 }
 
 td, th {
-    border: solid 4px
+    border: solid 4px;
+    background-color: rgb(226, 175, 241);
 }
 
 th {
-    background-color: rgb(70, 190, 150);
+    background-color: rgb(215, 165, 230);
 }
 
 tr:nth-child(even) {
-    background: rgb(175, 38, 61);
+    background:  lightgreen;
 }
 
 .total {
