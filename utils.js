@@ -1,6 +1,6 @@
 
 //////////THIS ONE
-import { items as hardCodedHair } from '../data.js';
+import { items as hardCodedHair } from './data.js';
 
 export function calculateItem(quantity, price) {
     let linetotal = quantity * price;
