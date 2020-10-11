@@ -1,4 +1,4 @@
-///import { items } from '../data.js';
+///import { items } from '../';
 //import { renderHair } from '../utils.js';
 import { getLocalStorageItems, renderHair } from '../utils.js';
 
