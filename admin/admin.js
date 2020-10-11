@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 const form = document.querySelector('form');
-import { items } from '../data.js';
+//import { items } from '../data.js';
 import { getLocalStorageItems, PRODUCTS } from '../utils.js';
 
 ///////////////
@@ -26,11 +27,11 @@ form.addEventListener('submit', (e) => {
         price: Number(price),
     };
 
-    addNewItem(newItem);
+    let test = addNewItem(newItem);
     
 });
 
-export function addNewItem(newItem) {
+function addNewItem(newItem) {
   ///items.push(newItem);
     const localStorageItems = getLocalStorageItems();
  
@@ -39,9 +40,5 @@ export function addNewItem(newItem) {
     const stringyLocalItems = JSON.stringify(localStorageItems);
  //alert('stringyLocalItems' + stringyLocalItems);
     localStorage.setItem(PRODUCTS, stringyLocalItems);
-    
+    return stringyLocalItems;
 }
-
-
-
-
