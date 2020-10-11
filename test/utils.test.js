@@ -1,15 +1,15 @@
 
  //IMPORT MODULES under test here:
-import { renderHair } from '../utils.js';
+import { renderHair, addNewItem } from '../utils.js';
 
 import { renderTableRow } from '../cart/cart-utils.js';
-import { addNewItem } from '../admin/admin.js';
-//import { items } from '../data.js';
+///import { addNewItem } from '../admin/admin.js';
+import { items } from '../data.js';
 //import { calculateTotal } from '../cart/cart.js';
 //import { calculateItem } from '../cart/cart.js';
 //import { addNewItem } from '../admin.js';
 const test = QUnit.test;
-/////////////PASS
+/////////////PASS1
 test('should take in a hair care product and return an li with the appropriate contents', (expect) => {
     const item = {
         id: 'Joico',
@@ -33,7 +33,7 @@ test('should take in a hair care product and return an li with the appropriate c
     //id: 'Joico',
    // quantity: 5,
 ///},
-////////////PASS
+////////////PASS2
 test('should take in a cartItem and return a tr element with the apporiate contents', (expect) => {
     const cartItem = {
         id: 'Joico',
@@ -45,7 +45,9 @@ test('should take in a cartItem and return a tr element with the apporiate conte
     expect.equal(actual.outerHTML, expected);
   
 });
-////////////    PASS
+////////////    PASS3
+
+
 test('should take in a cartItem and returns the total price for a single item', (expect) => {
     const cartItemQuantity = 1;
     const cartItemPrice = 3;
@@ -56,26 +58,17 @@ test('should take in a cartItem and returns the total price for a single item', 
     expect.equal(actual, expected);
   
 });
-//////////// PASS
-test('addProduct should take in a product object and add it to local storage (returning nothing)', (expect) => {
-    const newItem = {
-        title: 'deep clean',
-        price:
-    }; 
 
-       
-    
-    const expectation = newItem ;
-    const localStorageAfter = JSON.parse(localStorage.getItem('items'));
-    expect.deepEqual(expectation, localStorageAfter);
-});
+
+//////////// PASS
 //////////////////////////
-/*test('addProduct should take in a product object and add it to local storage (returning nothing)', (expect) => {
+test('addNewItem should take in a product object and add it to local storage (returning nothing)', (expect) => {
     const newItem = {
         title: 'Deep Clean',
         price: 5 
     };
-    const expectation = [
+
+    const expected = [
         { 
             id: 'Joico',
             title: 'Daily Care',
@@ -125,7 +118,7 @@ test('addProduct should take in a product object and add it to local storage (re
 
     addNewItem(newItem);
 
-    const localStorageAfter = JSON.parse(localStorage.getItem('items'));
-  
-    expect.deepEqual(expectation, localStorageAfter);
-});*/
+    
+
+    expect.deepEqual(items, expected);
+});

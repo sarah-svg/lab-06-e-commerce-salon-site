@@ -22,6 +22,21 @@ export function findById(someArray, someId) {
     }
 }
 //////////////
+export function addNewItem(newItem) {
+    ///items.push(newItem);
+    const localStorageItems = getLocalStorageItems();
+   
+    localStorageItems.push(newItem);
+  
+    const stringyLocalItems = JSON.stringify(localStorageItems);
+   //alert('stringyLocalItems' + stringyLocalItems);
+    localStorage.setItem(PRODUCTS, stringyLocalItems);
+      
+}
+
+
+
+//////////////////////////////////////
 export function getLocalStorageItems() {
     let localStorageItems = JSON.parse(localStorage.getItem(PRODUCTS));
 

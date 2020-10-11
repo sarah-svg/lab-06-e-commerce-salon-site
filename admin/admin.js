@@ -1,11 +1,22 @@
 /* eslint-disable no-unused-vars */
 const form = document.querySelector('form');
 //import { items } from '../data.js';
-import { getLocalStorageItems, PRODUCTS } from '../utils.js';
+import { getLocalStorageItems, PRODUCTS, addNewItem } from '../utils.js';
 
 ///////////////
-/////////////////
+/////////////////moved to utils
 
+/*export function addNewItem(newItem) {
+    ///items.push(newItem);
+    const localStorageItems = getLocalStorageItems();
+   
+    localStorageItems.push(newItem);
+  
+    const stringyLocalItems = JSON.stringify(localStorageItems);
+   //alert('stringyLocalItems' + stringyLocalItems);
+    localStorage.setItem(PRODUCTS, stringyLocalItems);
+      
+}*/
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -27,11 +38,11 @@ form.addEventListener('submit', (e) => {
         price: Number(price),
     };
 
-    let test = addNewItem(newItem);
+    addNewItem(newItem);
     
 });
 
-function addNewItem(newItem) {
+/*export function addNewItem(newItem) {
   ///items.push(newItem);
     const localStorageItems = getLocalStorageItems();
  
@@ -40,5 +51,5 @@ function addNewItem(newItem) {
     const stringyLocalItems = JSON.stringify(localStorageItems);
  //alert('stringyLocalItems' + stringyLocalItems);
     localStorage.setItem(PRODUCTS, stringyLocalItems);
-    return stringyLocalItems;
-}
+    //return stringyLocalItems;
+}*/
